@@ -30,12 +30,13 @@ function Image() {
           src={photo.urls.regular}
           alt="" />
         <div>
-          <p className="text-xl font-bold">ID: <span className="font-mono">{photo.id}</span></p>
-          <h2 className="text-xl"><span className="font-bold mb-3">Created:</span> {photo.created_at}</h2>
-          <h2 className="text-xl mb-4">
+          <p className="text-xl font-bold mb-1">ID: <span className="font-mono">{photo.id}</span></p>
+          <h2 className="text-xl mb-1"><span className="font-bold mb-3">Created:</span> {photo.created_at}</h2>
+          <h2 className="text-xl mb-1">
             <span className="font-bold text-xl">Description: </span>
             {photo.alt_description}
           </h2>
+          <h2 className="mb-5"><span className="text-xl font-bold">Likes:</span> {photo.likes},</h2>
           <div className="flex gap-5">
 
             <NavLink className="btn btn-outline btn-secondary" to="/">Go Home</NavLink>
