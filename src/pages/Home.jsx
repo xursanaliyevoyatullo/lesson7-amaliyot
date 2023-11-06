@@ -7,7 +7,7 @@ const API = 'https://api.unsplash.com/search/photos?client_id=Fkqdx4hhg-PiWkXTTy
 
 
 function Home() {
-    const [url, setUrl] = useState(API + 'features')
+    const [url, setUrl] = useState(API + 'laptop')
     const { data, isPending, error } = useFetch(url)
 
     const setNewUrl = (url) => {
@@ -17,9 +17,9 @@ function Home() {
     return (
         <div>
             <h1 className="mb-4 font-bold text-xl mt-28">Search Any Image:</h1>
-            <Search setNewUrl={setNewUrl}/>
+            <Search setNewUrl={setNewUrl} />
             {data && <Galerey data={data} />}
-            {isPending && <h1>Loading...</h1>}  
+            {isPending && <h1 className="text-center mt-5 mb-5 font-bold text-xl">Loading...</h1>}
             {error && <h1>{error}</h1>}
         </div>
     )

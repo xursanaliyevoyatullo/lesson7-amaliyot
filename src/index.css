@@ -32,17 +32,26 @@ img {
     height: 300px;
 }
 
+.liked {
+    padding-top: 10px;
+    border: px solid;
+    margin-left: 12px;
+    padding: 3px;
+}
+
 @media screen and (max-width: 645px) {
     img {
         width: 100%;
         margin: auto;
     }
 }
+
 @media screen and (max-width: 400px) {
     .navbar-tall {
         flex-direction: column;
         text-align: center;
     }
+
     .nav-bar {
         margin: auto;
         margin-top: 10px;

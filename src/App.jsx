@@ -7,6 +7,7 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import ErrorPage from "./pages/ErrorPage"
 import Image from "./pages/Image"
+import Liked from "./pages/Liked"
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     {
       path: "/",
       element: <RootLayout />,
-      errorElement: <ErrorPage/>,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
@@ -30,8 +31,12 @@ function App() {
           element: <Contact />,
         },
         {
-          path: "image",
-          element: <Image/>
+          path: "/image/:id",
+          element: <Image />
+        },
+        {
+          path: "liked",
+          element: <Liked />
         }
       ]
     }
