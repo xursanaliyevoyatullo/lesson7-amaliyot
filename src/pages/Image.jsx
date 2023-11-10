@@ -22,7 +22,7 @@ function Image() {
       });
   }, []);
   return (
-    <div className="mx-full mt-10 flex gap-7 items-center">
+    <div className="mx-full mt-10 flex gap-7 items-center justify-between">
       {photo && <>
         <img
           key={id}

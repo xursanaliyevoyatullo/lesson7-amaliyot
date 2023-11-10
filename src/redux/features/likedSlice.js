@@ -3,15 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 const results = "https://api.unsplash.com/search/photos?client_id=Fkqdx4hhg-PiWkXTTyvja3Q241c5twL2XN2G9-zF1ZM&page=1&query="
 
 const initialState = {
-    products: results,
+    products: [],
     amount: 4,
-    theme: 'dark'
+    theme: 'dark',
+    user: null,
 }
 
 const likedSlice = createSlice({
     name: "shop",
     initialState,
     reducers: {
+        incrementAmount: (state, { payload }) => {
+            const item = state.products.find((item) => item.name === payload.name)
+            item.amount++
+        },
+        removeItem: () => {
+
+        },
         // incrementAmount: (state, { payload }) => {
         //     const item = state.products.find((item) => item.name === payload.name)
         //     item.amount++
@@ -35,9 +43,14 @@ const likedSlice = createSlice({
         //     state.amount = amount
         //     state.total = total
         // },
+        userSetting: (state, { payload }) => {
+            state.user = payload
+        }
     },
 });
 
 // export const { incrementAmount, decrementAmount, removeItem, updateTotal } = shopSlice.actions
+
+export const { userSetting } = likedSlice.actions
 
 export default likedSlice.reducer
